@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz - apQuiz App</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script type="text/javascript">
+      //<![CDATA[
+      var questions = {{ questions|tojson|safe }};
+      //var questions = [{"id":1,"question":"...","option_a":"..."}];
+      //]]>
+    </script>
+    <script defer src="/static/quiz.js"></script>
+</head>
+<body>
+    <div class="container" id="quiz-container">
+        <h2>Quiz</h2>
+        <div id="confirmation-screen">
+            <p>Ready to start the quiz?</p>
+            <button id="start-quiz-btn" class="btn">Start Quiz</button>
+        </div>
+        <form id="quiz-form" style="display:none;">
+            <div id="question-area"></div>
+            <div class="quiz-controls">
+                <button type="button" id="prev-btn" class="btn btn-secondary">Previous</button>
+                <span id="timer">30</span> seconds left
+                <button type="button" id="next-btn" class="btn">Next</button>
+            </div>
+            <button type="submit" class="btn">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
